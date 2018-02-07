@@ -1,35 +1,23 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import { getAllCommentsByPostId } from '../redux/actions/comments'
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { getAllCommentsByPostId } from '../redux/actions';
 
 class Post extends Component {
   componentDidMount() {
-    this.props.getAllCommentsByPostId(this.props.post.id)
+    this.props.getAllCommentsByPostId(this.props.post.id);
   }
-  render () {
-    const { post, comments } = this.props
-    let length = 0;
-    if (comments.length > 0) {
-      length = comments.filter(comment => comment.parentId === post.id).length
-    }
-    const renderCommentLength = (length === 1 ? "1 comment": `${length} comments`)
+  render() {
+    const { post } = this.props;
+    console.log(this.props);
+    const renderCommentLength = post.commentsNum === 1 ? '1 comment' : `${post.commentsNum} comments`;
     return (
-      <li className="list-group-item" style={{ backgroundColor: "#fe5619", border: "1px dashed white"}}>
-        <div>
-        {this.props.post.id}
-        </div>
+      <li className="list-group-item" style={{ backgroundColor: '#fe5619', border: '1px dashed white' }}>
+        <div>{this.props.post.id}</div>
         {this.props.post.title}
-        <div>
-          {renderCommentLength}
-        </div>
-
+        <div>{renderCommentLength}</div>
       </li>
-    )
+    );
   }
 }
 
-const mapStateToProps = ({ comments }) => ({
-  comments
-})
-
-export default connect(mapStateToProps, { getAllCommentsByPostId })(Post)
+export default connect(null, { getAllCommentsByPostId })(Post);

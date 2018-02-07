@@ -1,6 +1,6 @@
-import { GET_POSTS_BY_CATEGORY } from "../constants/posts";
+import { GET_POSTS_BY_CATEGORY } from '../constants';
 
-export const getPostsByCategory = (category) => ({
+export const getPostsByCategory = category => ({
   type: GET_POSTS_BY_CATEGORY,
-  category
-})
+  category,
+});

@@ -1,17 +1,18 @@
-import React, { Component } from 'react'
-import Post from './Post'
+import React from 'react';
+import PropTypes from 'prop-types';
+import Post from './Post';
 
-class Posts extends Component {
-  render () {
-    const { posts } = this.props
+const Posts = ({ posts }) => {
+  const renderPosts = posts.length > 0 ? posts.map(post => <Post key={post.id} post={post} />) : <div />;
+  return <ul className="list-group">{renderPosts}</ul>;
+};
 
-    const renderPosts = posts.map(post => <Post key={post.id} post={post} />)
-    return (
-      <ul className="list-group">
-        {renderPosts}
-      </ul>
-    )
-  }
-}
+Posts.defaultProps = {
+  posts: [],
+};
 
-export default Posts
+Posts.propTypes = {
+  posts: PropTypes.array,
+};
+
+export default Posts;

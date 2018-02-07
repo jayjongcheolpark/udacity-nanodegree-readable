@@ -1,19 +1,19 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import Filter from '../components/Filter'
-import Posts from '../components/Posts'
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import Filter from '../components/Filter';
+import Posts from '../components/Posts';
 
 class AllPosts extends Component {
-  render () {
-    const { posts, categories } = this.props
-    let allPosts = []
+  render() {
+    const { posts, categories } = this.props;
+    const allPosts = [];
     if (categories.length > 0 && posts) {
       categories.forEach(category => {
-        if(posts[category] && posts[category].length > 0) {
-          posts[category].forEach(post => allPosts.push(post))
+        if (posts[category] && posts[category].length > 0) {
+          posts[category].forEach(post => allPosts.push(post));
         }
-      })
-      console.log(allPosts)
+      });
+      console.log(allPosts);
     }
     return (
       <div className="container mt-5">
@@ -22,13 +22,13 @@ class AllPosts extends Component {
           <Posts posts={allPosts} />
         </div>
       </div>
-    )
+    );
   }
 }
 
-const mapStateToProps = ({posts, categories}) => ({
+const mapStateToProps = ({ posts, categories }) => ({
   posts,
-  categories
-})
+  categories,
+});
 
-export default connect(mapStateToProps)(AllPosts)
+export default connect(mapStateToProps)(AllPosts);

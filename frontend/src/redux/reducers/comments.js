@@ -1,15 +1,15 @@
-import { GET_ALL_COMMENTS_BY_POST_ID_SUCCESS } from '../constants/comments'
+import { GET_ALL_COMMENTS_BY_POST_ID_SUCCESS } from '../constants/comments';
 
 const commentsReducer = (state = [], action) => {
   switch (action.type) {
-    case GET_ALL_COMMENTS_BY_POST_ID_SUCCESS:
-      const { comments } = action
+    case GET_ALL_COMMENTS_BY_POST_ID_SUCCESS: {
+      const { comments } = action;
 
-      return [ ...comments ]
-
+      return [...comments];
+    }
     default:
-      return state
+      return state;
   }
-}
+};
 
-export default commentsReducer
+export default commentsReducer;

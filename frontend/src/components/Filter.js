@@ -45,7 +45,7 @@ class Filter extends Component {
         to={`/${filter}`}
         key={filter}
         style={btnWidth}
-        onClick={e => this.clickHandler(filter)}
+        onClick={() => this.clickHandler(filter)}
       >
         {_.capitalize(filter)}
       </Link>
@@ -53,7 +53,7 @@ class Filter extends Component {
 
     return (
       <div className="d-flex justify-content-start align-items-center">
-        <Link className={this.styleSelector('all')} to="/" style={btnWidth} onClick={e => this.clickHandler('all')}>
+        <Link className={this.styleSelector('all')} to="/" style={btnWidth} onClick={() => this.clickHandler('all')}>
           All
         </Link>
         {renderLinks}

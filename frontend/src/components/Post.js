@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { getAllCommentsByPostId } from '../redux/actions';
 
@@ -19,5 +20,10 @@ class Post extends Component {
     );
   }
 }
+
+Post.propTypes = {
+  getAllCommentsByPostId: PropTypes.func.isRequired,
+  post: PropTypes.object.isRequired,
+};
 
 export default connect(null, { getAllCommentsByPostId })(Post);

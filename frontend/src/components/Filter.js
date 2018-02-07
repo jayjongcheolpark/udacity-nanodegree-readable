@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import _ from 'lodash';
@@ -10,7 +11,7 @@ const activeStyle = 'btn btn-light mr-2';
 
 class Filter extends Component {
   state = {
-    active: this.props.filter || 'all',
+    active: this.props.filter,
   };
 
   componentDidMount() {
@@ -60,6 +61,17 @@ class Filter extends Component {
     );
   }
 }
+
+Filter.defaultProps = {
+  filter: 'all',
+};
+
+Filter.propTypes = {
+  filters: PropTypes.array.isRequired,
+  filter: PropTypes.string,
+  getAllCategories: PropTypes.func.isRequired,
+  getPostsByCategory: PropTypes.func.isRequired,
+};
 
 const mapStateToProps = ({ categories }) => ({
   filters: categories,

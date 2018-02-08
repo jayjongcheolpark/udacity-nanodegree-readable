@@ -11,10 +11,15 @@ import VoteButtons from './VoteButtons';
 
 class Post extends Component {
   deletePost = () => {};
+
   voteUp = () => {};
+
   voteDown = () => {};
+
   render() {
     const { id, category, title, author, body, timestamp, commentCount, voteScore } = this.props.post;
+
+    const badgeColor = voteScore >= 10 ? 'badge-danger' : 'badge-secondary';
     return (
       <li className="list-group-item post">
         <div className="d-flex justify-content-between align-items-start">
@@ -25,7 +30,7 @@ class Post extends Component {
         </div>
         <SmallLabel label={`post by ${author}`} />
         <Badge label={category} />
-        <Badge label="Vote" badgeColor="badge-secondary" voteCount={voteScore} />
+        <Badge label="Vote" badgeColor={badgeColor} voteCount={voteScore} />
         <div className="my-3">
           <TextTruncate line={1} truncateText="..." text={body} />
         </div>

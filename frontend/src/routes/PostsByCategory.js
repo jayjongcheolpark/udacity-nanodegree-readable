@@ -3,10 +3,12 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Filter from '../components/Filter';
 import Posts from '../components/Posts';
+import NewPostButton from '../components/NewPostButton';
 
 const PostsByCategory = props => (
   <div className="container mt-5">
     <Filter filter={props.match.params.category} />
+    <NewPostButton />
     <div className="mt-5">
       <Posts posts={props.posts} />
     </div>

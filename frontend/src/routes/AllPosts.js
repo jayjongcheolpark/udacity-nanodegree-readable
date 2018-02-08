@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Filter from '../components/Filter';
 import Posts from '../components/Posts';
+import NewPostButton from '../components/NewPostButton';
 
 const AllPosts = ({ posts, categories }) => {
   const allPosts = [];
@@ -17,6 +18,7 @@ const AllPosts = ({ posts, categories }) => {
   return (
     <div className="container mt-5">
       <Filter />
+      <NewPostButton />
       <div className="mt-5">
         <Posts posts={allPosts} />
       </div>

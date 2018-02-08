@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import VoteButton from './VoteButton';
 
 const VoteButtons = ({ voteUp, voteDown }) => (
-  <div>
+  <div className="d-flex">
     <VoteButton clickHandler={voteUp} />
     <VoteButton clickHandler={voteDown} btnClass="btn btn-outline-secondary" iconClass="fa fa-thumbs-o-down" />
   </div>

@@ -8,16 +8,20 @@ import Badge from './Badge';
 import CommentCount from './CommentCount';
 import CloseButton from './CloseButton';
 import VoteButtons from './VoteButtons';
-import { deletePost } from '../redux/actions';
+import { deletePost, upVoteToPost, downVoteToPost } from '../redux/actions';
 
 class Post extends Component {
   deletePost = () => {
     this.props.deletePost(this.props.post.id);
   };
 
-  voteUp = () => {};
+  voteUp = () => {
+    this.props.upVoteToPost(this.props.post.id);
+  };
 
-  voteDown = () => {};
+  voteDown = () => {
+    this.props.downVoteToPost(this.props.post.id);
+  };
 
   render() {
     const { id, category, title, author, body, timestamp, commentCount, voteScore } = this.props.post;
@@ -52,6 +56,8 @@ class Post extends Component {
 Post.propTypes = {
   post: PropTypes.object.isRequired,
   deletePost: PropTypes.func.isRequired,
+  upVoteToPost: PropTypes.func.isRequired,
+  downVoteToPost: PropTypes.func.isRequired,
 };
 
-export default connect(null, { deletePost })(Post);
+export default connect(null, { deletePost, upVoteToPost, downVoteToPost })(Post);

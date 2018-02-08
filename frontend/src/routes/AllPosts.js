@@ -19,7 +19,7 @@ const AllPosts = ({ posts, categories }) => {
     <div className="container mt-5">
       <Filter />
       <NewPostButton />
-      <div className="mt-5">
+      <div className="my-4">
         <Posts posts={allPosts} />
       </div>
     </div>

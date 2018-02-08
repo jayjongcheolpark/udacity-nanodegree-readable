@@ -9,7 +9,7 @@ const PostsByCategory = props => (
   <div className="container mt-5">
     <Filter filter={props.match.params.category} />
     <NewPostButton />
-    <div className="mt-5">
+    <div className="my-4">
       <Posts posts={props.posts} />
     </div>
   </div>

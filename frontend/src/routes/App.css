@@ -3,7 +3,10 @@ body {
 }
 
 .post {
-  border: 5px solid #fe5619;
+  border-top: 10px solid #fe5619;
+  border-bottom: 10px solid #fe5619;
+  border-left: none;
+  border-right: none;
   padding: 30px;
 }
 

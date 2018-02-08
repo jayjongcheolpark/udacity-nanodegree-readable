@@ -8,9 +8,12 @@ import Badge from './Badge';
 import CommentCount from './CommentCount';
 import CloseButton from './CloseButton';
 import VoteButtons from './VoteButtons';
+import { deletePost } from '../redux/actions';
 
 class Post extends Component {
-  deletePost = () => {};
+  deletePost = () => {
+    this.props.deletePost(this.props.post.id);
+  };
 
   voteUp = () => {};
 
@@ -48,6 +51,7 @@ class Post extends Component {
 
 Post.propTypes = {
   post: PropTypes.object.isRequired,
+  deletePost: PropTypes.func.isRequired,
 };
 
-export default connect()(Post);
+export default connect(null, { deletePost })(Post);

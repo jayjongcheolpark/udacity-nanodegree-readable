@@ -1,4 +1,17 @@
 body {
   background-color: #fe5619;
-  color: white;
+}
+
+.post {
+  border: 5px solid #fe5619;
+  padding: 30px;
+}
+
+.sm-label {
+  color: lightcyan;
+}
+
+.post a:hover, .post a:active {
+  color: #fe5619;
+  text-decoration: none;
 }

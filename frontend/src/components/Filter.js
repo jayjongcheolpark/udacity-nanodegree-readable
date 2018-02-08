@@ -7,7 +7,7 @@ import { getAllCategories, getPostsByCategory } from '../redux/actions';
 
 const btnWidth = { width: '100px' };
 const defaultStyle = 'btn btn-outline-light mr-2';
-const activeStyle = 'btn btn-light mr-2';
+const activeStyle = 'btn btn-light mr-2 text-danger';
 
 class Filter extends Component {
   state = {

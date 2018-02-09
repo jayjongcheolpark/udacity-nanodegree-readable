@@ -27,6 +27,7 @@ class Post extends Component {
     const { id, category, title, author, body, timestamp, commentCount, voteScore } = this.props.post;
 
     const badgeColor = voteScore >= 10 ? 'badge-danger' : 'badge-secondary';
+
     return (
       <li className="list-group-item post">
         <div className="d-flex justify-content-between align-items-start">

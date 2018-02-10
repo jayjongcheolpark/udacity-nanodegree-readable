@@ -16,6 +16,12 @@ class Filter extends Component {
 
   componentDidMount() {
     this.props.getAllCategories();
+    const { filters } = this.props;
+    if (filters && filters.length > 0) {
+      filters.forEach(filter => {
+        this.props.getPostsByCategory(filter);
+      });
+    }
   }
 
   componentWillReceiveProps(nextProps) {

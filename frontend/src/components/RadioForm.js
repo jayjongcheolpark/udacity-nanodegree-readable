@@ -9,7 +9,7 @@ class RadioForm extends Component {
     this.props.getAllCategories();
   }
   render() {
-    const { label, selectRadio, checkedVal, categories } = this.props;
+    const { label, handleChange, checkedVal, categories } = this.props;
     return (
       <div>
         <div>{label}</div>
@@ -21,7 +21,7 @@ class RadioForm extends Component {
                 key={category}
                 evtName="category"
                 val={category}
-                handleChange={selectRadio}
+                handleChange={handleChange}
                 checked={checkedVal === category}
               />
             ))}
@@ -37,7 +37,7 @@ RadioForm.defaultProps = {
 
 RadioForm.propTypes = {
   label: PropTypes.string.isRequired,
-  selectRadio: PropTypes.func.isRequired,
+  handleChange: PropTypes.func.isRequired,
   checkedVal: PropTypes.string.isRequired,
   categories: PropTypes.array,
   getAllCategories: PropTypes.func.isRequired,

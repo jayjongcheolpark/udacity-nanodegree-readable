@@ -1,4 +1,18 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+#root {
+  height: 100%;
+}
+
 body {
+  background-color: #343a40;
+}
+
+.all-posts {
   background-color: #fe5619;
 }
 
@@ -17,4 +31,8 @@ body {
 .post a:hover, .post a:active {
   color: #fe5619;
   text-decoration: none;
+}
+
+.new-post {
+  background-color: #ffeaa7;
 }

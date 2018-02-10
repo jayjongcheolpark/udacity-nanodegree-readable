@@ -10,7 +10,7 @@ import './App.css';
 
 const App = () => (
   <BrowserRouter>
-    <div>
+    <div className="h-100">
       <Header title="Readable" />
       <Switch>
         <Route exact path="/" component={AllPosts} />

@@ -31,15 +31,11 @@ class RadioForm extends Component {
   }
 }
 
-RadioForm.defaultProps = {
-  categories: ['all'],
-};
-
 RadioForm.propTypes = {
   label: PropTypes.string.isRequired,
   handleChange: PropTypes.func.isRequired,
   checkedVal: PropTypes.string.isRequired,
-  categories: PropTypes.array,
+  categories: PropTypes.array.isRequired,
   getAllCategories: PropTypes.func.isRequired,
 };
 

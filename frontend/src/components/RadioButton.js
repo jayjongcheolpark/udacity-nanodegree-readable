@@ -12,7 +12,7 @@ const RadioButton = ({ evtName, val, handleChange, checked }) => (
       autoComplete="off"
       value={val}
       onChange={e => handleChange(e, evtName)}
-      checked={val}
+      checked={checked}
     />
     {_.capitalize(val)}
   </label>

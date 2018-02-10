@@ -42,7 +42,7 @@ class PostForm extends Component {
         <form onSubmit={this.onSubmit}>
           <RadioForm label="Category" checkedVal={category} handleChange={this.handleChange} />
           <InputText id="title" value={title} handleChange={this.handleChange} required />
-          <InputArea id="content" value={body} handleChange={this.handleChange} required />
+          <InputArea id="body" value={body} handleChange={this.handleChange} label="content" required />
           <InputText
             id="author"
             value={this.state.author}

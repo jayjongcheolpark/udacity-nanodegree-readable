@@ -4,7 +4,7 @@ import _ from 'lodash';
 
 const InputArea = ({ id, value, handleChange, required, label, disabled }) => (
   <div className="form-group">
-    <label htmlFor={id}>{_.capitalize(id)}</label>
+    <label htmlFor={id}>{_.capitalize(label)}</label>
     <textarea
       type="text"
       className="form-control"

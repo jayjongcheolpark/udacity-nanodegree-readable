@@ -3,6 +3,7 @@ import {
   DELETE_POST_SUCCESS,
   UPVOTE_TO_POST_SUCCESS,
   DOWNVOTE_TO_POST_SUCCESS,
+  ADD_POST_SUCCESS,
 } from '../constants';
 
 const postsReducer = (state = {}, action) => {
@@ -22,6 +23,11 @@ const postsReducer = (state = {}, action) => {
       const { id, category } = action.post;
       const newPosts = state[category].map(post => (post.id === id ? action.post : post));
       return { ...state, [category]: newPosts };
+    }
+    case ADD_POST_SUCCESS: {
+      const { post } = action;
+      const newPosts = state[post.category].push(post);
+      return { ...state, [post.category]: newPosts };
     }
     default:
       return state;

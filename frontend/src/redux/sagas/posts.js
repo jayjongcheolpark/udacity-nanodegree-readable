@@ -1,4 +1,4 @@
-import { call, put, takeEvery } from 'redux-saga/effects';
+import { call, put, takeEvery, takeLatest } from 'redux-saga/effects';
 import {
   GET_POSTS_BY_CATEGORY,
   GET_POSTS_BY_CATEGORY_SUCCESS,
@@ -8,8 +8,10 @@ import {
   UPVOTE_TO_POST_SUCCESS,
   DOWNVOTE_TO_POST,
   DOWNVOTE_TO_POST_SUCCESS,
+  ADD_POST,
+  ADD_POST_SUCCESS,
 } from '../constants/posts';
-import { getPostsByCategory, deletePost, upVoteToPost, downVoteToPost } from '../../utils/api';
+import { getPostsByCategory, deletePost, upVoteToPost, downVoteToPost, addPost } from '../../utils/api';
 
 function* getPostsByCategorySaga({ category }) {
   const posts = yield call(getPostsByCategory, category);
@@ -48,11 +50,21 @@ function* downVoteToPostSaga({ id }) {
   });
 }
 
+function* addPostSaga(action) {
+  const post = yield call(addPost, action.post);
+
+  yield put({
+    type: ADD_POST_SUCCESS,
+    post,
+  });
+}
+
 const postsSaga = [
   takeEvery(GET_POSTS_BY_CATEGORY, getPostsByCategorySaga),
   takeEvery(DELETE_POST, deletePostSaga),
   takeEvery(UPVOTE_TO_POST, upVoteToPostSaga),
   takeEvery(DOWNVOTE_TO_POST, downVoteToPostSaga),
+  takeLatest(ADD_POST, addPostSaga),
 ];
 
 export default postsSaga;

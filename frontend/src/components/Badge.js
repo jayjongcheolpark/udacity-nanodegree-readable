@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import _ from 'lodash';
 
 const Badge = ({ label, badgeColor, disabled, voteCount }) => {
-  const voteBadge = voteCount && <span className="text-warning"> {voteCount}</span>;
+  const voteBadge = voteCount !== undefined && <span className="text-warning"> {voteCount}</span>;
 
   return (
     <span className={`badge ${badgeColor} mr-2 px-1`} disabled={disabled}>

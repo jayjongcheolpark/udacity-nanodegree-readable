@@ -6,7 +6,7 @@ import Posts from '../components/Posts';
 import NewPostButton from '../components/NewPostButton';
 
 const PostsByCategory = props => (
-  <div className="py-5 px-4 all-posts">
+  <div className="mt-5 container">
     <Filter filter={props.match.params.category} />
     <NewPostButton />
     <div className="my-4">

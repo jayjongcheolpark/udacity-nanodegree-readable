@@ -6,7 +6,7 @@ class EditPost extends Component {
   editPost = post => {};
   render() {
     return (
-      <div className="py-5 px-4 edit-post">
+      <div className="mt-5 container">
         <PostForm submitPost={this.editPost} isNew={false} />
       </div>
     );

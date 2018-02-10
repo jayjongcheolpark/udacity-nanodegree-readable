@@ -15,7 +15,7 @@ const AllPosts = ({ posts, categories }) => {
     });
   }
   return (
-    <div className="py-5 px-4 all-posts">
+    <div className="mt-5 container">
       <Filter />
       <NewPostButton />
       <div className="my-4">

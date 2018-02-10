@@ -6,8 +6,8 @@ import _ from 'lodash';
 import { getAllCategories, getPostsByCategory } from '../redux/actions';
 
 const btnWidth = { width: '100px' };
-const defaultStyle = 'btn btn-outline-light mr-2';
-const activeStyle = 'btn btn-light mr-2 text-danger';
+const defaultStyle = 'btn btn-outline-secondary mr-2';
+const activeStyle = 'btn btn-danger mr-2';
 
 class Filter extends Component {
   state = {

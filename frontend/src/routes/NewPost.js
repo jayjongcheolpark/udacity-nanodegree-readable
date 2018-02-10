@@ -6,7 +6,7 @@ class NewPost extends Component {
   addPost = post => {};
   render() {
     return (
-      <div className="py-5 px-4 new-post h-100">
+      <div className="mt-5 container">
         <PostForm submitPost={this.addPost} isNew />
       </div>
     );

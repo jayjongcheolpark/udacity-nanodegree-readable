@@ -68,7 +68,7 @@ h6 {
 }
 
 .post {
-  border: 1px dashed #fe5619;
+  border: 1px dashed #ff5138;
   margin: 10px;
   padding: 30px;
 }
@@ -77,8 +77,12 @@ h6 {
   color: lightcyan;
 }
 
+.post a.h2 {
+  color: #ff5138;
+}
+
 .post a:hover, .post a:active {
-  color: #fe5619;
+  color: #eb1d00;
   text-decoration: none;
 }
 

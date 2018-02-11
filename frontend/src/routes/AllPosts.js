@@ -1,12 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import Filter from '../components/Filter';
-import Posts from '../components/Posts';
-import NewPostButton from '../components/NewPostButton';
-import RadioForSort from '../components/RadioForSort';
+import PostsContainer from '../components/PostsContainer';
 import { setSortBy } from '../redux/actions';
-import { getSortedPosts } from '../utils';
 
 class AllPosts extends Component {
   changeSortBy = e => this.props.setSortBy(e.target.value);
@@ -21,16 +17,7 @@ class AllPosts extends Component {
         }
       });
     }
-    return (
-      <div className="mt-5 container">
-        <Filter />
-        <NewPostButton />
-        <div className="my-4">
-          <RadioForSort sortBy={sortBy} changeHandler={this.changeSortBy} />
-          <Posts posts={getSortedPosts(allPosts, sortBy)} />
-        </div>
-      </div>
-    );
+    return <PostsContainer sortBy={sortBy} posts={allPosts} changeSortBy={this.changeSortBy} />;
   }
 }
 

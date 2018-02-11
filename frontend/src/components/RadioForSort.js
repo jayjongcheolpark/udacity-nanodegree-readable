@@ -15,7 +15,7 @@ const RadioForSort = ({ sortBy, changeHandler }) => (
         checked={sortBy === 'date'}
       />
       <label className="form-check-label" htmlFor="radioDate">
-        Date
+        <small>Date</small>
       </label>
     </div>
     <div className="form-check form-check-inline">
@@ -29,7 +29,7 @@ const RadioForSort = ({ sortBy, changeHandler }) => (
         checked={sortBy === 'score'}
       />
       <label className="form-check-label" htmlFor="radioScore">
-        Score
+        <small>Score</small>
       </label>
     </div>
   </div>

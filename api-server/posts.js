@@ -38,7 +38,7 @@ const defaultData = {
   },
   "dfjkdfd890u38782hjh2d8": {
     id: 'dfjkdfd890u38782hjh2d8',
-    timestamp: 1568479768000,
+    timestamp: 1468479767323,
     title: 'React Nanodegree Program',
     body: "For the Readable project, you will build a content and comment web app. Users will be able to post content to predefined categories, comment on their posts and other users' posts, and vote on posts and comments. Users will also be able to edit and delete posts and comments.",
     author: 'mentor',

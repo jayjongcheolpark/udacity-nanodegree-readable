@@ -8,6 +8,7 @@ import Badge from './Badge';
 import CommentCount from './CommentCount';
 import CloseButton from './CloseButton';
 import VoteButtons from './VoteButtons';
+import EditBadge from './EditBadge';
 import { deletePost, upVoteToPost, downVoteToPost } from '../redux/actions';
 
 class Post extends Component {
@@ -31,9 +32,12 @@ class Post extends Component {
     return (
       <li className="list-group-item post">
         <div className="d-flex justify-content-between align-items-start">
-          <Link className="h2" to={`/${category}/${id}`}>
-            {title}
-          </Link>
+          <div className="d-flex align-items-start">
+            <Link className="h2 mr-2" to={`/${category}/${id}`}>
+              {title}
+            </Link>
+            <EditBadge link={`/${category}/${id}/edit`} />
+          </div>
           <CloseButton closeHandler={this.deletePost} />
         </div>
         <SmallLabel label={`post by ${author}`} />

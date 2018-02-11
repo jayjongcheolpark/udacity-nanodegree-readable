@@ -1,21 +1,40 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { Redirect } from 'react-router-dom';
 import PostForm from '../components/PostForm';
 import NotFound from './NotFound';
-import { getPostByPostId } from '../redux/actions';
+import { getPostByPostId, editPostByPostId } from '../redux/actions';
 
 class EditPost extends Component {
+  state = {
+    redirect: false,
+  };
+
   componentDidMount() {
-    console.log('editPost');
     this.props.getPostByPostId(this.props.match.params.postId);
   }
-  editPost = post => {};
+
+  editPost = ({ id, title, body }) => {
+    this.props.editPostByPostId({
+      id,
+      title,
+      body,
+    });
+    this.setState({ redirect: true });
+  };
+
   render() {
     const { post } = this.props;
+
+    if (this.state.redirect) {
+      return <Redirect to="/" />;
+    }
+
     if (post === {}) {
       return <NotFound />;
     }
+
     return (
       <div className="mt-5 container">
         <PostForm submitPost={this.editPost} post={post} isNew={false} />
@@ -31,6 +50,7 @@ EditPost.defaultProps = {
 EditPost.propTypes = {
   post: PropTypes.object,
   getPostByPostId: PropTypes.func.isRequired,
+  editPostByPostId: PropTypes.func.isRequired,
   match: PropTypes.object.isRequired,
 };
 
@@ -38,4 +58,4 @@ const mapStateToProps = ({ post }) => ({
   post,
 });
 
-export default connect(mapStateToProps, { getPostByPostId })(EditPost);
+export default connect(mapStateToProps, { getPostByPostId, editPostByPostId })(EditPost);

@@ -10,8 +10,16 @@ import {
   DOWNVOTE_TO_POST_SUCCESS,
   ADD_POST,
   ADD_POST_SUCCESS,
+  EDIT_POST_BY_POST_ID,
 } from '../constants/posts';
-import { getPostsByCategory, deletePost, upVoteToPost, downVoteToPost, addPost } from '../../utils/api';
+import {
+  getPostsByCategory,
+  deletePost,
+  upVoteToPost,
+  downVoteToPost,
+  addPost,
+  editPostByPostId,
+} from '../../utils/api';
 
 function* getPostsByCategorySaga({ category }) {
   const posts = yield call(getPostsByCategory, category);
@@ -59,12 +67,24 @@ function* addPostSaga(action) {
   });
 }
 
+function* editPostByPostIdSaga(action) {
+  const post = yield call(editPostByPostId, action.post);
+  const posts = yield call(getPostsByCategory, post.category);
+
+  yield put({
+    type: GET_POSTS_BY_CATEGORY_SUCCESS,
+    category: post.category,
+    posts,
+  });
+}
+
 const postsSaga = [
   takeEvery(GET_POSTS_BY_CATEGORY, getPostsByCategorySaga),
   takeEvery(DELETE_POST, deletePostSaga),
   takeEvery(UPVOTE_TO_POST, upVoteToPostSaga),
   takeEvery(DOWNVOTE_TO_POST, downVoteToPostSaga),
   takeLatest(ADD_POST, addPostSaga),
+  takeLatest(EDIT_POST_BY_POST_ID, editPostByPostIdSaga),
 ];
 
 export default postsSaga;

@@ -81,3 +81,7 @@ h6 {
   color: #fe5619;
   text-decoration: none;
 }
+
+textarea {
+  height: 10em;
+}

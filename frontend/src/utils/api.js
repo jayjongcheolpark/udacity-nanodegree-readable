@@ -95,7 +95,7 @@ export async function getPostByPostId(id) {
   return res.data;
 }
 
-export async function editPostById({ id, title, body }) {
+export async function editPostByPostId({ id, title, body }) {
   const res = await axios.put(
     `/api/posts/${id}`,
     {

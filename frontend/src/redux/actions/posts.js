@@ -1,4 +1,11 @@
-import { GET_POSTS_BY_CATEGORY, DELETE_POST, UPVOTE_TO_POST, DOWNVOTE_TO_POST, ADD_POST } from '../constants';
+import {
+  GET_POSTS_BY_CATEGORY,
+  DELETE_POST,
+  UPVOTE_TO_POST,
+  DOWNVOTE_TO_POST,
+  ADD_POST,
+  EDIT_POST_BY_POST_ID,
+} from '../constants';
 
 export const getPostsByCategory = category => ({
   type: GET_POSTS_BY_CATEGORY,
@@ -22,5 +29,10 @@ export const downVoteToPost = id => ({
 
 export const addPost = post => ({
   type: ADD_POST,
+  post,
+});
+
+export const editPostByPostId = post => ({
+  type: EDIT_POST_BY_POST_ID,
   post,
 });

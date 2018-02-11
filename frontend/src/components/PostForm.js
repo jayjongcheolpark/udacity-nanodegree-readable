@@ -8,7 +8,7 @@ class PostForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      category: '',
+      category: 'react',
       title: '',
       body: '',
       author: '',
@@ -27,8 +27,7 @@ class PostForm extends Component {
 
   onSubmit = e => {
     e.preventDefault();
-    const { category, title, author } = this.state;
-    const body = this.state.content;
+    const { category, title, author, body } = this.state;
     this.props.submitPost({
       id: this.props.post.id,
       category,
@@ -50,7 +49,7 @@ class PostForm extends Component {
     return (
       <div>
         <form onSubmit={this.onSubmit}>
-          <RadioForm label="Category" checkedVal={category} handleChange={this.handleChange} />
+          <RadioForm label="Category" checkedVal={category} handleChange={this.handleChange} disabled={!isNew} />
           <InputText id="title" value={title} handleChange={this.handleChange} required />
           <InputArea id="body" value={body} handleChange={this.handleChange} label="content" required />
           <InputText

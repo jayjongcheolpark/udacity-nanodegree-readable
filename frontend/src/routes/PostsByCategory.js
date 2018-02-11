@@ -6,6 +6,7 @@ import Posts from '../components/Posts';
 import NewPostButton from '../components/NewPostButton';
 import RadioForSort from '../components/RadioForSort';
 import { setSortBy } from '../redux/actions';
+import { getSortedPosts } from '../utils';
 
 class PostsByCategory extends Component {
   changeSortBy = e => this.props.setSortBy(e.target.value);
@@ -18,7 +19,7 @@ class PostsByCategory extends Component {
         <NewPostButton />
         <div className="my-4">
           <RadioForSort sortBy={sortBy} changeHandler={this.changeSortBy} />
-          <Posts posts={posts} />
+          <Posts posts={getSortedPosts(posts, sortBy)} />
         </div>
       </div>
     );

@@ -1,4 +1,4 @@
-import { GET_ALL_CATEGORIES_SUCCESS } from '../constants/category';
+import { GET_ALL_CATEGORIES_SUCCESS } from '../constants';
 
 const categoryReducer = (state = [], action) => {
   switch (action.type) {

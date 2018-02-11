@@ -89,7 +89,7 @@ export async function deletePost(id) {
   return res.data;
 }
 
-export async function getPostById(id) {
+export async function getPostByPostId(id) {
   const res = await axios.get(`/api/posts/${id}`, { headers });
 
   return res.data;

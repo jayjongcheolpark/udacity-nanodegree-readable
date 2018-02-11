@@ -7,14 +7,24 @@ import RadioForm from './RadioForm';
 class PostForm extends Component {
   constructor(props) {
     super(props);
-    const { category, title, body, author } = this.props.post;
     this.state = {
+      category: '',
+      title: '',
+      body: '',
+      author: '',
+    };
+  }
+
+  componentWillReceiveProps(nextProps) {
+    const { category, title, body, author } = nextProps.post;
+    this.setState({
       category,
       title,
       body,
       author,
-    };
+    });
   }
+
   onSubmit = e => {
     e.preventDefault();
     const { category, title, author } = this.state;

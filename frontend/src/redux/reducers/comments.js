@@ -1,4 +1,4 @@
-import { GET_ALL_COMMENTS_BY_POST_ID_SUCCESS } from '../constants/comments';
+import { GET_ALL_COMMENTS_BY_POST_ID_SUCCESS } from '../constants';
 
 const commentsReducer = (state = [], action) => {
   switch (action.type) {

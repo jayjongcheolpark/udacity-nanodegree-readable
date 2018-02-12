@@ -8,3 +8,11 @@ export const getSortedPosts = (posts, order) => {
   }
   return posts;
 };
+
+export function dateFormatCanada(timestamp) {
+  return new Date(timestamp).toLocaleString('en-CA', { timeZone: 'America/Toronto' });
+}
+
+export function dateFormat(timestamp) {
+  return new Date(timestamp).toString();
+}

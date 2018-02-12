@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const EditBadge = ({ link }) => (
   <Link className="badge badge-success" to={link}>
-    <i className="fa fa-pencil-square-o" aria-hidden="true" />
+    Edit <i className="fa fa-pencil-square-o" aria-hidden="true" />
   </Link>
 );
 

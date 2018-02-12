@@ -14,13 +14,14 @@ const Badge = ({ label, badgeColor, disabled, voteCount }) => {
 };
 
 Badge.defaultProps = {
+  label: '',
   badgeColor: 'badge-primary',
   disabled: true,
   voteCount: undefined,
 };
 
 Badge.propTypes = {
-  label: PropTypes.string.isRequired,
+  label: PropTypes.string,
   badgeColor: PropTypes.string,
   disabled: PropTypes.bool,
   voteCount: PropTypes.number,

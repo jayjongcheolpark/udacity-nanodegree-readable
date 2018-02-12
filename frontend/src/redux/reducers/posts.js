@@ -21,8 +21,11 @@ const postsReducer = (state = {}, action) => {
     case UPVOTE_TO_POST_SUCCESS:
     case DOWNVOTE_TO_POST_SUCCESS: {
       const { id, category } = action.post;
-      const newPosts = state[category].map(post => (post.id === id ? action.post : post));
-      return { ...state, [category]: newPosts };
+      if (state[category] && state[category].length > 0) {
+        const newPosts = state[category].map(post => (post.id === id ? action.post : post));
+        return { ...state, [category]: newPosts };
+      }
+      return state;
     }
     case ADD_POST_SUCCESS: {
       const { post } = action;

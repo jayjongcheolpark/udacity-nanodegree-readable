@@ -12,8 +12,12 @@ const CommentCount = ({ commentCount }) => {
   );
 };
 
+CommentCount.defaultProps = {
+  commentCount: 0,
+};
+
 CommentCount.propTypes = {
-  commentCount: PropTypes.number.isRequired,
+  commentCount: PropTypes.number,
 };
 
 export default CommentCount;

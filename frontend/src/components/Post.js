@@ -10,6 +10,7 @@ import CloseButton from './CloseButton';
 import VoteButtons from './VoteButtons';
 import EditBadge from './EditBadge';
 import { deletePost, upVoteToPost, downVoteToPost } from '../redux/actions';
+import { dateFormat } from '../utils';
 
 class Post extends Component {
   deletePost = () => {
@@ -48,7 +49,7 @@ class Post extends Component {
         </div>
         <div className="d-flex justify-content-between align-items-end">
           <div>
-            <SmallLabel label={new Date(timestamp).toString()} />
+            <SmallLabel label={dateFormat(timestamp)} />
             <CommentCount commentCount={commentCount} />
           </div>
           <VoteButtons voteUp={this.voteUp} voteDown={this.voteDown} />

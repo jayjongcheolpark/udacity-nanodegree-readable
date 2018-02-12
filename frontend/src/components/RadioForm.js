@@ -10,22 +10,27 @@ class RadioForm extends Component {
   }
   render() {
     const { label, handleChange, checkedVal, categories, disabled } = this.props;
+
+    const renderRadioBtn = disabled ? (
+      <RadioButton key={checkedVal} evtName="category" val={checkedVal} handleChange={handleChange} checked disabled />
+    ) : (
+      categories.map(category => (
+        <RadioButton
+          key={category}
+          evtName="category"
+          val={category}
+          handleChange={handleChange}
+          checked={checkedVal === category}
+          disabled={disabled}
+        />
+      ))
+    );
+
     return (
       <div>
         <div>{label}</div>
         <div className="btn-group btn-group-toggle mb-4" data-toggle="buttons">
-          {categories
-            .filter(category => category !== 'all')
-            .map(category => (
-              <RadioButton
-                key={category}
-                evtName="category"
-                val={category}
-                handleChange={handleChange}
-                checked={checkedVal === category}
-                disabled={disabled}
-              />
-            ))}
+          {renderRadioBtn}
         </div>
       </div>
     );

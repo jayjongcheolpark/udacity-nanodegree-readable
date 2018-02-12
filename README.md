@@ -7,7 +7,7 @@ Readable is an app has posts and comments like Hacker News and Reddit. Users wil
 ### Installing
 
 ```
-git clone https://github.com/jayjongcheolpark/readable.git
+git clone https://github.com/jayjongcheolpark/udacity-nanodegree-readable.git
 cd readable
 
 #for server
@@ -53,15 +53,8 @@ npm start
 #### Using Redux and Redux-Saga
 To use redux and redux-saga is easier to manage state and asynchronous things, more efficient to execute, simple to test, and better at handling failure.
 
-#### Storybook
-Storybook is a development environment for UI components. It allows you to browse a component library, view the different states of each component, and interactively develop and test components.
-
-![Storybook](https://thumbs.gfycat.com/AmusedLinedIndianskimmer-size_restricted.gif)
-
-Storybook is deployed on [https://jayjongcheolpark.github.io/readable/](https://jayjongcheolpark.github.io/readable/)
-
 #### Deployment
-This App is deployed on [Heroku](https://reactnanodegree-readable.herokuapp.com/)
+This App is deployed on [Heroku](https://readable-udacity.herokuapp.com/)
 
 
 ## License

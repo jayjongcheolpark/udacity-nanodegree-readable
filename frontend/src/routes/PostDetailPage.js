@@ -2,9 +2,10 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
+import PostDetail from '../components/PostDetail';
 import { getPostByPostId } from '../redux/actions';
 
-class PostDetail extends Component {
+class PostDetailPage extends Component {
   state = {};
 
   componentDidMount() {
@@ -12,14 +13,19 @@ class PostDetail extends Component {
   }
 
   render() {
-    if (this.props.post.err) {
+    const { post } = this.props;
+    if (post.err) {
       return <Redirect to="/error/InvalidPostId" />;
     }
-    return <div>{this.props.post.title}</div>;
+    return (
+      <div>
+        <PostDetail post={post} />
+      </div>
+    );
   }
 }
 
-PostDetail.propTypes = {
+PostDetailPage.propTypes = {
   match: PropTypes.object.isRequired,
   getPostByPostId: PropTypes.func.isRequired,
   post: PropTypes.object.isRequired,
@@ -29,4 +35,4 @@ const mapStateToProps = ({ post }) => ({
   post,
 });
 
-export default connect(mapStateToProps, { getPostByPostId })(PostDetail);
+export default connect(mapStateToProps, { getPostByPostId })(PostDetailPage);

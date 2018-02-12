@@ -31,9 +31,10 @@ PostsByCategory.propTypes = {
   sortBy: PropTypes.oneOf(['date', 'score']).isRequired,
 };
 
-const mapStateToProps = ({ posts, sortBy }, ownProps) => ({
+const mapStateToProps = ({ posts, sortBy, categories }, ownProps) => ({
   posts: posts[ownProps.match.params.category],
   sortBy,
+  categories,
 });
 
 export default connect(mapStateToProps, { setSortBy })(PostsByCategory);

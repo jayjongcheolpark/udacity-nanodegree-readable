@@ -4,6 +4,7 @@ import Header from '../components/Header';
 import AllPosts from './AllPosts';
 import PostsByCategory from './PostsByCategory';
 import NewPost from './NewPost';
+import PostDetail from './PostDetail';
 import EditPost from './EditPost';
 import NotFound from './NotFound';
 import './App.css';
@@ -15,7 +16,9 @@ const App = () => (
       <Switch>
         <Route exact path="/" component={AllPosts} />
         <Route exact path="/new" component={NewPost} />
+        <Route exact path="/error/:errMsg" component={NotFound} />
         <Route exact path="/:category" component={PostsByCategory} />
+        <Route exact path="/:category/:postId" component={PostDetail} />
         <Route exact path="/:category/:postId/edit" component={EditPost} />
         <Route component={NotFound} />
         {/*

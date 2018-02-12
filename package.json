@@ -19,7 +19,7 @@
   },
   "scripts": {
     "start": "node api-server/server.js",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --only=dev --prefix frontend && npm install --prefix frontend && npm run build --prefix frontend"
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=true npm install --only=dev --prefix frontend && npm install --prefix frontend && npm run build --prefix frontend"
   },
   "devDependencies": {
     "eslint-config-airbnb": "^16.1.0",

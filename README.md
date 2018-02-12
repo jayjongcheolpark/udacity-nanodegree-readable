@@ -23,7 +23,7 @@ npm start
 
 ### Demo
 
-![Demo](https://user-images.githubusercontent.com/13275149/35788076-e0391a00-0a00-11e8-9337-973ad6ab9727.png)
+![Demo](https://user-images.githubusercontent.com/13275149/36115064-ee9be7bc-0fff-11e8-9df2-3691fd44b3c4.png)
 
 [https://readable-udacity.herokuapp.com/](https://readable-udacity.herokuapp.com/)
 

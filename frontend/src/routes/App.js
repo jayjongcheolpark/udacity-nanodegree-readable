@@ -21,14 +21,6 @@ const App = () => (
         <Route exact path="/:category/:postId" component={PostDetailPage} />
         <Route exact path="/:category/:postId/edit" component={EditPost} />
         <Route component={NotFound} />
-        {/*
-            <Route exact path="/" component={Main} />
-            <Route exact path="/:category" component={Main} />
-            <Route exact path="/post/new" component={FormView} />
-            <Route exact path="/post/:id" component={PostDetailView} />
-            <Route exact path="/post/edit/:id" component={FormView} />
-            <Route component={NotFound} />
-            */}
       </Switch>
     </div>
   </BrowserRouter>

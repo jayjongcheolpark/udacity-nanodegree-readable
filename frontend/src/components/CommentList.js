@@ -6,19 +6,15 @@ import { upVoteToComment, downVoteToComment, deleteComment, editComment } from '
 
 const CommentList = props => {
   const upVoteHandler = id => {
-    console.log(id);
     props.upVoteToComment(id);
   };
   const downVoteHandler = id => {
-    console.log(id);
     props.downVoteToComment(id);
   };
   const deleteCommentHandler = id => {
-    console.log(id);
     props.deleteComment(id);
   };
   const editCommentHandler = ({ id, body }) => {
-    console.log(id);
     props.editComment({ id, body });
   };
   const renderComments = props.comments.map(comment => (

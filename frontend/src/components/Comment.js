@@ -18,7 +18,6 @@ class Comment extends Component {
     this.props.downVote(this.props.comment.id);
   };
   deleteComment = () => {
-    console.log(this.props.comment.id);
     this.props.deleteComment(this.props.comment.id);
   };
 
